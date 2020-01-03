@@ -1,0 +1,19 @@
+name: 'IntelliJ Plugin Verifier'
+description: 'GitHub Action that verifies plugin compatibility with any version of IntelliJ IDEA.'
+author: 'Pieter De Clercq <@thepieterdc>'
+inputs:
+  plugin:
+    description: 'Path to the plugin distribution zip file'
+    required: true
+  version:
+    description: 'The version of IntelliJ that should be validated against'
+    required: true
+branding:
+  color: 'green'
+  icon: 'check-circle'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.plugin }}
+    - ${{ inputs.version }}
