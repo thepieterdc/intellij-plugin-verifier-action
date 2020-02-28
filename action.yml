@@ -5,8 +5,8 @@ inputs:
   plugin:
     description: 'Path to the plugin distribution zip file'
     required: true
-  version:
-    description: 'The version of IntelliJ that should be validated against'
+  versions:
+    description: 'The versions of IntelliJ that should be validated against'
     required: true
 branding:
   color: 'green'
@@ -16,4 +16,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.plugin }}
-    - ${{ inputs.version }}
+    - ${{ inputs.versions }}
