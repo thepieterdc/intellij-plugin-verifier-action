@@ -1,6 +1,6 @@
 # IntelliJ Plugin Verifier GitHub Action
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1.0.0-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/intellij-plugin-verifier)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1.1.0-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/intellij-plugin-verifier)
 
 Use GitHub Actions to verify the compatibility of your IntelliJ plugin against any version of IntelliJ IDEA.
 
