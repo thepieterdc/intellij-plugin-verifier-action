@@ -1,6 +1,6 @@
 # IntelliJ Plugin Verifier GitHub Action
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1.1.0-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/intellij-plugin-verifier)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1.1.1-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/intellij-plugin-verifier)
 
 Use GitHub Actions to verify the compatibility of your IntelliJ plugin against any version of IntelliJ IDEA.
 
@@ -11,7 +11,7 @@ Simply add the action to your workflow-file and specify the path to your plugin,
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: thepieterdc/intellij-plugin-verifier-action@v1.1.0
+- uses: thepieterdc/intellij-plugin-verifier-action@v1.1.1
   with:
     plugin: '/path/to/plugin.zip'
     versions: |
@@ -47,7 +47,7 @@ jobs:
         java-version: 11.x.x
     - name: Build the plugin using Gradle
       run: ./gradlew buildPlugin
-    - uses: thepieterdc/intellij-plugin-verifier-action@v1.1.0
+    - uses: thepieterdc/intellij-plugin-verifier-action@v1.1.1
       with:
         plugin: '/home/runner/work/demo-plugin/demo-plugin/build/distributions/demo-plugin-*'
         versions: |

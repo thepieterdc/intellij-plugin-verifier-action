@@ -25,20 +25,25 @@ java -cp "/parser.jar" parser.Main | while read -r line; do
     sed -i "$ s+$+/ides/$dir +g" $directories
 
     # Download the required IntelliJ version.
+    echo "Downloading $zipfile..."
     curl -L --output "$zipfile" "$line"
 
     # Extract the zip.
-    unzip -d "/ides/$dir" "$zipfile"
+    echo "Unzipping $dir..."
+    unzip -qq -d "/ides/$dir" "$zipfile"
 done
 
 # Reopen the created file to get the list of directories as a space-separated
 # string.
 ides=$(cat $directories)
 
+# Write the plugin zips to a file.
+for f in $(echo "$INPUT_PLUGIN"); do echo "$f" >> plugins.txt; done
+
 # Execute the verifier.
-echo "Running verification..."
+echo "Running verifications..."
 verification_log="/tmp/verification.log"
-java -jar /verifier.jar check-plugin "$INPUT_PLUGIN" $ides 2>&1 > "$verification_log"
+java -jar /verifier.jar check-plugin "@plugins.txt" $ides 2>&1 > "$verification_log"
 
 # Output the log.
 cat "$verification_log"
