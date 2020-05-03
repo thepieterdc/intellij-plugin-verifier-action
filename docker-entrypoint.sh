@@ -52,6 +52,9 @@ cat "$verification_log"
 if egrep -q "^Plugin (.*) against .*: .* compatibility problems?$" "$verification_log"; then
     # An error has occurred.
     exit 1
+elif egrep -q "^The following files specified for the verification are not valid plugins:$" "$verification_log"; then
+    # An error has occurred.
+    exit 1
 else
     # Everything's fine.
     exit 0
