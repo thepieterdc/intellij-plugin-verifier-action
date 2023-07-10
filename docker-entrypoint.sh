@@ -40,6 +40,9 @@ ides=$(cat $directories)
 # Write the plugin zips to a file.
 for f in $(echo "$INPUT_PLUGIN"); do echo "$f" >> plugins.txt; done
 
+# Download the Jetbrains' IntelliJ Plugin Verifier
+curl -L --output /verifier.jar "https://packages.jetbrains.team/maven/p/intellij-plugin-verifier/intellij-plugin-verifier/org/jetbrains/intellij/plugins/verifier-cli/$INPUT_VERIFIER_VERSION/verifier-cli-$INPUT_VERIFIER_VERSION-all.jar"
+
 # Execute the verifier.
 echo "Running verifications..."
 verification_log="/tmp/verification.log"

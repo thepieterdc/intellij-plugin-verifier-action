@@ -5,6 +5,10 @@ inputs:
   plugin:
     description: 'Path to the plugin distribution zip file'
     required: true
+  verifier_version:
+    description: 'The version of the Jetbains IntelliJ Verifier that you want to use'
+    required: true
+    default: '1.301'
   versions:
     description: 'The versions of IntelliJ that should be validated against'
     required: true
@@ -16,4 +20,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.plugin }}
+    - ${{ inputs.verifier_version }}
     - ${{ inputs.versions }}
