@@ -14,6 +14,7 @@ steps:
 - uses: thepieterdc/intellij-plugin-verifier-action@v1.3.0
   with:
     plugin: '/path/to/plugin.zip'
+    verifier_version: 1.301
     versions: |
       181.5684.4
       2019.3.3
@@ -50,6 +51,7 @@ jobs:
     - uses: thepieterdc/intellij-plugin-verifier-action@v1.3.0
       with:
         plugin: '/home/runner/work/demo-plugin/demo-plugin/build/distributions/demo-plugin-*'
+        verifier_version: 1.301
         versions: |
           181.5684.4
           2019.3.3
